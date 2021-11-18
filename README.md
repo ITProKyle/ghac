@@ -19,4 +19,4 @@ terraform import "module.generic_template.github_branch_default.default[0]" gene
 
 Things that don't need to be imported:
 
-- issue labels
+- `issue_labels`
