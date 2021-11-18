@@ -53,22 +53,6 @@ module "ghac" {
   license_template                      = "apache-2.0"
   name                                  = "ghac"
   visibility                            = "public"
-
-  branch_protections_v3 = [
-    {
-      branch         = "master"
-      enforce_admins = false
-      required_pull_request_reviews = {
-        dismiss_stale_reviews = true
-      }
-      required_status_checks = {
-        contexts = [  # must have run at lease once to use
-          "Terraform Cloud/Finley/ghac-ITProKyle",
-        ]
-        strict = false
-      }
-    }
-  ]
 }
 
 module "itprokyle" {
