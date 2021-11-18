@@ -157,6 +157,7 @@ locals {
     }, b.restrictions)] : []
   ]
 }
+
 resource "github_branch_protection_v3" "branch_protection" {
   count = length(local.branch_protections)
 
@@ -194,15 +195,16 @@ resource "github_branch_protection_v3" "branch_protection" {
     }
   }
 
-  dynamic "restrictions" {
-    for_each = local.restrictions[count.index]
+  # only supported for orgs
+  # dynamic "restrictions" {
+  #   for_each = local.restrictions[count.index]
 
-    content {
-      users = restrictions.value.users
-      teams = [for t in restrictions.value.teams : replace(lower(t), "/[^a-z0-9_]/", "-")]
-      apps  = restrictions.value.apps
-    }
-  }
+  #   content {
+  #     users = restrictions.value.users
+  #     teams = [for t in restrictions.value.teams : replace(lower(t), "/[^a-z0-9_]/", "-")]
+  #     apps  = restrictions.value.apps
+  #   }
+  # }
 }
 
 # ---------------------------------------------------------------------------------------------------------------------
