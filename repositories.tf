@@ -2,13 +2,24 @@ locals {
   issue_labels = yamldecode(file("./.github/labels.yml"))
 }
 
+module "action_setup_python" {
+  source = "./modules/repo"
+
+  default_branch                        = "master"
+  description                           = "A composite action for setting up python."
+  issue_labels                          = local.issue_labels
+  issue_labels_merge_with_github_labels = false
+  name                                  = "action-setup-python"
+  visibility                            = "public"
+}
+
 module "dot_github" {
   source = "./modules/repo"
 
   auto_init                             = true
   default_branch                        = "master"
   description                           = "Default GitHub configuration files."
-  issue_labels                          = yamldecode(file("./.github/labels.yml"))
+  issue_labels                          = local.issue_labels
   issue_labels_merge_with_github_labels = false
   name                                  = ".github"
   visibility                            = "public"
