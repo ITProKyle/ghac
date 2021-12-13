@@ -66,6 +66,24 @@ module "itprokyle" {
   visibility                            = "public"
 }
 
+module "ssm_dox" {
+  source = "./modules/repo"
+
+  auto_init                             = true
+  default_branch                        = "master"
+  description                           = "CLI tool for building and publishing SSM Documents."
+  homepage_url                          = "https://ssm-dox.readthedocs.io"
+  issue_labels                          = local.issue_labels
+  issue_labels_merge_with_github_labels = false
+  name                                  = "ssm-dox"
+  topics = [
+    "aws",
+    "cli",
+    "ssm-document",
+  ]
+  visibility = "public"
+}
+
 module "troposphere_pydantic" {
   source = "./modules/repo"
 

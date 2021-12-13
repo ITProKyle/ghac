@@ -137,7 +137,7 @@ locals {
     {
       name        = "enhancement"
       description = "New feature or request"
-      color       = "a2eeef"  # cspell:ignore a2eeef
+      color       = "a2eeef" # cspell:ignore a2eeef
     },
     {
       name        = "good first issue"
