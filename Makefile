@@ -18,3 +18,18 @@ help: ## show this message
 
 format: ## formats terraform
 	terraform fmt -recursive
+
+setup: setup-npm ## setup development environment
+
+setup-npm: ## install node dependencies with npm
+	@npm ci
+
+spellcheck: ## run cspell
+	@echo "Running cSpell to checking spelling..."
+	@npx cspell "**/*" \
+		--color \
+		--config .vscode/cspell.json \
+		--must-find-files \
+		--no-progress \
+		--relative \
+		--show-context

@@ -173,7 +173,7 @@ variable "issue_labels" {
   #   },
   #   {
   #     name        = "another-label"
-  #     description = "This is a lable created by Terraform..."
+  #     description = "This is a label created by Terraform..."
   #     color       = "1dc34f"
   #   }
   # ]

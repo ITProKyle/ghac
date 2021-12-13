@@ -5,7 +5,7 @@ output "collaborators" {
 
 output "full_name" {
   value       = github_repository.repository.full_name
-  description = "A string of the form 'orgname/reponame'."
+  description = "A string of the form '<org-name>/<repo-name>'."
 }
 
 output "git_clone_url" {

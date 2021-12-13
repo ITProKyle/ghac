@@ -1,0 +1,29 @@
+{
+    "ignorePaths": [
+        "**/*.pyc",
+        "**/*.ts",
+        "**/.runway/**",
+        "**/.serverless/**",
+        "**/.terraform/**",
+        "**/.venv/**",
+        "**/node_modules/**",
+        "**/package-lock.json",
+        "**/package.json"
+    ],
+    "language": "en",
+    "maxNumberOfProblems": 100,
+    "version": "0.2",
+    "words": [
+        "cname",
+        "collab",
+        "concat",
+        "fgrep",
+        "ghac",
+        "githubs",
+        "itprokyle",
+        "licences",
+        "pydantic",
+        "wontfix",
+        "yamldecode"
+    ]
+}

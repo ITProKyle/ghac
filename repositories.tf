@@ -71,7 +71,7 @@ module "troposphere_pydantic" {
 
   auto_init                             = true
   default_branch                        = "master"
-  description                           = "A POC project for using pydantic in the troposhere library."
+  description                           = "A POC project for using pydantic in the troposphere library."
   issue_labels                          = local.issue_labels
   issue_labels_merge_with_github_labels = false
   name                                  = "troposphere-pydantic"
