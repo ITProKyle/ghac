@@ -24,6 +24,7 @@
         "licences",
         "pydantic",
         "wontfix",
-        "yamldecode"
+        "yamldecode",
+        "yamlfmt"
     ]
 }

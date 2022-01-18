@@ -66,6 +66,20 @@ module "itprokyle" {
   visibility                            = "public"
 }
 
+module "pre_commit_hook_yamlfmt" {
+  source = "./modules/repo"
+
+  default_branch                        = "master"
+  description                           = "YAML formatter for http://pre-commit.com"
+  issue_labels                          = local.issue_labels
+  issue_labels_merge_with_github_labels = false
+  name                                  = "pre-commit-hook-yamlfmt"
+  topics = [
+    "pre-commit",
+  ]
+  visibility = "public"
+}
+
 module "ssm_dox" {
   source = "./modules/repo"
 
