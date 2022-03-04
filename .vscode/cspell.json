@@ -14,9 +14,11 @@
     "maxNumberOfProblems": 100,
     "version": "0.2",
     "words": [
+        "chezmoi",
         "cname",
         "collab",
         "concat",
+        "dotfiles",
         "fgrep",
         "ghac",
         "githubs",

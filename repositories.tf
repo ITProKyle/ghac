@@ -25,6 +25,24 @@ module "dot_github" {
   visibility                            = "public"
 }
 
+module "dotfiles" {
+  source = "./modules/repo"
+
+  auto_init                             = true
+  default_branch                        = "master"
+  description                           = "My collection of dotfiles."
+  issue_labels                          = local.issue_labels
+  issue_labels_merge_with_github_labels = false
+  license_template                      = "apache-2.0"
+  name                                  = "dotfiles"
+  topics = [
+    "chezmoi",
+    "dotfiles",
+    "zsh"
+  ]
+  visibility = "public"
+}
+
 module "generic_template" {
   source = "./modules/repo"
 
