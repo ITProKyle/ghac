@@ -13,6 +13,40 @@ module "action_setup_python" {
   visibility                            = "public"
 }
 
+module "devcontainer_features" {
+  source = "./modules/repo"
+
+  default_branch                        = "master"
+  description                           = "A collection of Dev Container Features."
+  homepage_url                          = "https://containers.dev/features"
+  issue_labels                          = local.issue_labels
+  issue_labels_merge_with_github_labels = false
+  license_template                      = "apache-2.0"
+  name                                  = "devcontainer-features"
+  topics = [
+    "devcontainers",
+    "devcontainers-features",
+  ]
+  visibility = "public"
+}
+
+module "devcontainer_templates" {
+  source = "./modules/repo"
+
+  default_branch                        = "master"
+  description                           = "A collection of Dev Container Templates."
+  homepage_url                          = "https://containers.dev/templates"
+  issue_labels                          = local.issue_labels
+  issue_labels_merge_with_github_labels = false
+  license_template                      = "apache-2.0"
+  name                                  = "devcontainer-templates"
+  topics = [
+    "devcontainers",
+    "devcontainers-templates",
+  ]
+  visibility = "public"
+}
+
 module "dot_github" {
   source = "./modules/repo"
 
