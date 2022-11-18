@@ -18,6 +18,8 @@
         "cname",
         "collab",
         "concat",
+        "devcontainer",
+        "devcontainers",
         "dotfiles",
         "fgrep",
         "ghac",
