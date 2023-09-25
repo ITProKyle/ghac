@@ -77,6 +77,35 @@ module "dotfiles" {
   visibility = "public"
 }
 
+module "f_cli" {
+  source = "./modules/repo"
+
+  default_branch                        = "master"
+  description                           = "This is a CLI tool packed with commands designed to simplify the workflow of a Cloud Engineer, DevOps Engineers, and Software Developers."
+  homepage_url                          = "https://f-cli.readthedocs.io/en/latest/"
+  issue_labels                          = local.issue_labels
+  issue_labels_merge_with_github_labels = false
+  name                                  = "f-cli"
+  topics = [
+    "cli",
+    "aws",
+    "cloud-engineer"
+  ]
+  visibility = "public"
+}
+
+module "f_lib" {
+  source = "./modules/repo"
+
+  default_branch                        = "master"
+  description                           = "A library of useful functions and classes for python projects."
+  homepage_url                          = "https://f-lib.readthedocs.io/"
+  issue_labels                          = local.issue_labels
+  issue_labels_merge_with_github_labels = false
+  name                                  = "f-lib"
+  visibility                            = "public"
+}
+
 module "generic_template" {
   source = "./modules/repo"
 

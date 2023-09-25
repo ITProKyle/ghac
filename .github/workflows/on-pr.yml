@@ -13,5 +13,5 @@ jobs:
       - uses: deepakputhraya/action-branch-name@v1.0.0  # cspell:ignore deepakputhraya
         with:
           regex: ([a-z])+\/([a-zA-Z0-9\-\_])+
-          allowed_prefixes: bugfix,chore,depend,dependabot,docs,feat,feature,fix,hotfix,maint,maintain,maintenance,release
+          allowed_prefixes: bugfix,chore,depend,dependabot,docs,feat,feature,fix,hotfix,maint,maintain,maintenance,release,renovate
           ignore: develop,master,release,v0_47_fixes
