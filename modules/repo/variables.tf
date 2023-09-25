@@ -22,6 +22,12 @@ variable "allow_squash_merge" {
   default     = null
 }
 
+variable "allow_update_branch" {
+  description = "(Optional) - Set to true to always suggest updating pull request branches. (Default: true)"
+  type        = bool
+  default     = null
+}
+
 variable "archive_on_destroy" {
   type        = string
   description = "(Optional) Set to `false` to not archive the repository instead of deleting on destroy."

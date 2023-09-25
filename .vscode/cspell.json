@@ -1,11 +1,8 @@
 {
     "ignorePaths": [
-        "**/*.pyc",
-        "**/*.ts",
-        "**/.runway/**",
-        "**/.serverless/**",
-        "**/.terraform/**",
-        "**/.venv/**",
+        "**/.git/**",
+        "**/.github/**",
+        "**/.gitignore",
         "**/node_modules/**",
         "**/package-lock.json",
         "**/package.json"
@@ -14,6 +11,7 @@
     "maxNumberOfProblems": 100,
     "version": "0.2",
     "words": [
+        "autoupdate",
         "chezmoi",
         "cname",
         "collab",
@@ -27,6 +25,9 @@
         "itprokyle",
         "licences",
         "pydantic",
+        "substr",
+        "tfenv",
+        "venv",
         "wontfix",
         "yamldecode",
         "yamlfmt"

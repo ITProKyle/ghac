@@ -1,10 +1,10 @@
 terraform {
-  required_version = "~> 1.0"
+  required_version = "~> 1.5"
 
   required_providers {
     github = {
       source  = "integrations/github"
-      version = "~> 4.18"
+      version = "~> 5.38"
     }
   }
 }
@@ -15,6 +15,7 @@ locals {
   allow_merge_commit     = var.allow_merge_commit == null ? lookup(var.defaults, "allow_merge_commit", false) : var.allow_merge_commit
   allow_rebase_merge     = var.allow_rebase_merge == null ? lookup(var.defaults, "allow_rebase_merge", false) : var.allow_rebase_merge
   allow_squash_merge     = var.allow_squash_merge == null ? lookup(var.defaults, "allow_squash_merge", true) : var.allow_squash_merge
+  allow_update_branch    = var.allow_update_branch == null ? lookup(var.defaults, "allow_update_branch", true) : var.allow_squash_merge
   auto_init              = var.auto_init == null ? lookup(var.defaults, "auto_init", false) : var.auto_init
   default_branch         = var.default_branch == null ? lookup(var.defaults, "default_branch", null) : var.default_branch
   delete_branch_on_merge = var.delete_branch_on_merge == null ? lookup(var.defaults, "delete_branch_on_merge", true) : var.delete_branch_on_merge
@@ -24,18 +25,18 @@ locals {
   has_wiki               = var.has_wiki == null ? lookup(var.defaults, "has_wiki", false) : var.has_wiki
   homepage_url           = var.homepage_url == null ? lookup(var.defaults, "homepage_url", "") : var.homepage_url
   is_template            = var.is_template == null ? lookup(var.defaults, "is_template", false) : var.is_template
+  issue_labels_create    = var.issue_labels_create == null ? lookup(var.defaults, "issue_labels_create", local.issue_labels_create_computed) : var.issue_labels_create
   license_template       = var.license_template == null ? lookup(var.defaults, "license_template", "") : var.license_template
   standard_topics        = var.topics == null ? lookup(var.defaults, "topics", []) : var.topics
   template               = var.template == null ? [] : [var.template]
   topics                 = concat(local.standard_topics, var.extra_topics)
   visibility             = var.visibility == null ? lookup(var.defaults, "visibility", "public") : var.visibility
-  issue_labels_create    = var.issue_labels_create == null ? lookup(var.defaults, "issue_labels_create", local.issue_labels_create_computed) : var.issue_labels_create
 
   issue_labels_create_computed = local.has_issues || length(var.issue_labels) > 0
 
   # for readability
-  var_gh_labels = var.issue_labels_merge_with_github_labels
   gh_labels     = local.var_gh_labels == null ? lookup(var.defaults, "issue_labels_merge_with_github_labels", true) : local.var_gh_labels
+  var_gh_labels = var.issue_labels_merge_with_github_labels
 
   issue_labels_merge_with_github_labels = local.gh_labels
   # Per default, GitHub activates vulnerability  alerts for public repositories and disables it for private repositories
@@ -51,6 +52,7 @@ resource "github_repository" "repository" {
   allow_merge_commit     = local.allow_merge_commit
   allow_rebase_merge     = local.allow_rebase_merge
   allow_squash_merge     = local.allow_squash_merge
+  allow_update_branch    = local.allow_update_branch
   archive_on_destroy     = var.archive_on_destroy
   archived               = var.archived
   auto_init              = local.auto_init

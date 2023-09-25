@@ -1,3 +1,4 @@
-.envrc
-.terraform
-node_modules
+**/.envrc
+.terraform/
+.venv/
+node_modules/

@@ -1,5 +1,5 @@
 terraform {
-  required_version = "~> 1.0"
+  required_version = "~> 1.5"
 
   backend "remote" {
     organization = "Finley"
@@ -12,7 +12,7 @@ terraform {
   required_providers {
     github = {
       source  = "integrations/github"
-      version = "~> 4.18"
+      version = "~> 5.38"
     }
   }
 }
