@@ -161,6 +161,19 @@ module "pre_commit_hook_yamlfmt" {
   visibility = "public"
 }
 
+module "purrgil" {
+  source = "./modules/repo"
+
+  auto_init                             = true
+  default_branch                        = "master"
+  description                           = "Project TBA."
+  issue_labels                          = local.issue_labels
+  issue_labels_merge_with_github_labels = false
+  license_template                      = "apache-2.0"
+  name                                  = "purrgil"
+  visibility                            = "public"
+}
+
 module "ssm_dox" {
   source = "./modules/repo"
 
