@@ -13,6 +13,22 @@ module "action_setup_python" {
   visibility                            = "public"
 }
 
+module "cspell_dict" {
+  source = "./modules/repo"
+
+  auto_init                             = true
+  default_branch                        = "master"
+  description                           = "My custom [cspell](https://github.com/streetsidesoftware/cspell) dictionary."
+  issue_labels                          = local.issue_labels
+  issue_labels_merge_with_github_labels = false
+  license_template                      = "apache-2.0"
+  name                                  = "cspell-dict"
+  topics = [
+    "cspell",
+  ]
+  visibility = "public"
+}
+
 module "devcontainer_features" {
   source = "./modules/repo"
 
