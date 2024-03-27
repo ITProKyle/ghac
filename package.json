@@ -2,15 +2,9 @@
   "name": "ghac",
   "version": "1.0.0",
   "description": "GitHub-as-Code using Terraform.",
-  "repository": {
-    "type": "git",
-    "url": "git+https://github.com/ITProKyle/ghac.git"
-  },
-  "bugs": {
-    "url": "https://github.com/ITProKyle/ghac/issues"
-  },
   "homepage": "https://github.com/ITProKyle/ghac#readme",
   "devDependencies": {
-    "cspell": "^7.3.6"
+    "@itprokyle/cspell-dict": "^1.1.0",
+    "cspell": "^8.6.1"
   }
 }

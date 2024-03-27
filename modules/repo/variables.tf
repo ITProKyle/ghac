@@ -194,13 +194,13 @@ variable "issue_labels_create" {
 }
 
 variable "issue_labels_merge_with_github_labels" {
-  description = "(Optional) Specify if you want to merge and control githubs default set of issue labels."
+  description = "(Optional) Specify if you want to merge and control Github's default set of issue labels."
   type        = bool
   default     = null
 }
 
 variable "license_template" {
-  description = "(Optional) Use the name of the template without the extension. For example, 'mit' or 'mpl-2.0'. Available licences: https://github.com/github/choosealicense.com/tree/gh-pages/_licenses"
+  description = "(Optional) Use the name of the template without the extension. For example, 'mit' or 'mpl-2.0'. Available licenses: https://github.com/github/choosealicense.com/tree/gh-pages/_licenses"
   type        = string
   default     = null
 }

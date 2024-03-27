@@ -7,30 +7,11 @@
         "**/package-lock.json",
         "**/package.json"
     ],
+    "import": [
+        "@itprokyle/cspell-dict/cspell-ext.json"
+    ],
     "language": "en",
     "maxNumberOfProblems": 100,
     "version": "0.2",
-    "words": [
-        "autoupdate",
-        "chezmoi",
-        "cname",
-        "collab",
-        "concat",
-        "devcontainer",
-        "devcontainers",
-        "dotfiles",
-        "fgrep",
-        "ghac",
-        "githubs",
-        "itprokyle",
-        "licences",
-        "purrgil",
-        "pydantic",
-        "substr",
-        "tfenv",
-        "venv",
-        "wontfix",
-        "yamldecode",
-        "yamlfmt"
-    ]
+    "words": []
 }
