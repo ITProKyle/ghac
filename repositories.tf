@@ -200,7 +200,12 @@ module "sphinxcontrib-external-links" {
   issue_labels_merge_with_github_labels = false
   license_template                      = "apache-2.0"
   name                                  = "sphinxcontrib.external-links"
-  visibility                            = "public"
+  topics = [
+    "sphinx",
+    "sphinx-extension",
+    "sphinxcontrib",
+  ]
+  visibility = "public"
 }
 
 module "ssm_dox" {
