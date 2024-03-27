@@ -190,6 +190,19 @@ module "purrgil" {
   visibility                            = "public"
 }
 
+module "sphinxcontrib-external-links" {
+  source = "./modules/repo"
+
+  auto_init                             = true
+  default_branch                        = "master"
+  description                           = "Sphinx extension for easily adding reusable external links."
+  issue_labels                          = local.issue_labels
+  issue_labels_merge_with_github_labels = false
+  license_template                      = "apache-2.0"
+  name                                  = "sphinxcontrib.external-links"
+  visibility                            = "public"
+}
+
 module "ssm_dox" {
   source = "./modules/repo"
 
