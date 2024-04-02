@@ -98,7 +98,7 @@ module "f_cli" {
 
   default_branch                        = "master"
   description                           = "This is a CLI tool packed with commands designed to simplify the workflow of a Cloud Engineer, DevOps Engineers, and Software Developers."
-  homepage_url                          = "https://f-cli.readthedocs.io/en/latest/"
+  homepage_url                          = "https://f-cli.readthedocs.io"
   issue_labels                          = local.issue_labels
   issue_labels_merge_with_github_labels = false
   name                                  = "f-cli"
@@ -115,7 +115,7 @@ module "f_lib" {
 
   default_branch                        = "master"
   description                           = "A library of useful functions and classes for python projects."
-  homepage_url                          = "https://f-lib.readthedocs.io/"
+  homepage_url                          = "https://f-lib.readthedocs.io"
   issue_labels                          = local.issue_labels
   issue_labels_merge_with_github_labels = false
   name                                  = "f-lib"
@@ -196,6 +196,7 @@ module "sphinxcontrib-external-links" {
   auto_init                             = true
   default_branch                        = "master"
   description                           = "Sphinx extension for easily adding reusable external links."
+  homepage_url                          = "https://sphinxcontribexternal-links.readthedocs.io"
   issue_labels                          = local.issue_labels
   issue_labels_merge_with_github_labels = false
   license_template                      = "apache-2.0"
